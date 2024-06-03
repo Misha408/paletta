@@ -7,14 +7,14 @@ export const Footer = () => {
   return (
     <div className="bg-footer">
       <div className="extraSmal:max-w-310 extraSmal:px-2 md:max-w-2xl lg:max-w-[82.5rem] h-40 m-auto flex justify-between items-center">
-        <img src="./icons/Logo.svg" alt="logo.png" className="w-auto" />
+        <img src="./icons/Logo.svg" alt="logo.png" className="extraSmal:w-[3rem] medium:w-[5rem]" />
 
         <nav className="header__nav mx-auto">
           <ul className="header__nav-list flex text-center extraSmal:flex-col extraSmal:gap-1 medium:flex-row medium:gap-4">
             <li className="header__nav-item">
               <NavLink
                 to='/product'
-                className={`uppercase font-regular text-gray`}
+                className={`uppercase font-regular text-gray medium:text-base extraSmal:text-xs`}
               >
                 {t('Product')}
               </NavLink>
@@ -22,7 +22,7 @@ export const Footer = () => {
             <li className="header__nav-item">
               <NavLink
                 to='/about'
-                className={`uppercase font-regular text-gray`}
+                className={`uppercase font-regular text-gray medium:text-base extraSmal:text-xs`}
               >
                 {t('About Us')}
               </NavLink>
@@ -30,7 +30,7 @@ export const Footer = () => {
             <li className="header__nav-item">
               <NavLink
                 to='/contacts'
-                className={`uppercase font-regular text-gray`}
+                className={`uppercase font-regular text-gray medium:text-base extraSmal:text-xs`}
               >
                 {t('Contacts')}
               </NavLink>
