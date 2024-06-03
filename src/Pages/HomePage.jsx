@@ -19,7 +19,7 @@ export const HomePage = () => {
           className="container__big anim__line 2xextraLarge:w-[82.5rem] large:w-4/5 small:w-11/12 extraSmal:w-11/12 mx-auto px-2.5 medium:mt-[6rem] flex"
         >
           <div
-            className="mr-8 text-left flex flex-col justify-center 2xextraLarge:max-w-72 large:max-w-80 wow animate__animated animate__fadeInLeft"
+            className="mr-8 text-left flex flex-col justify-center wow animate__animated animate__fadeInLeft"
           >
             <h1
               className="font-title 2xextraLarge:text-bigtitleSize large:text-5xl medium: text-2xl mb-4"

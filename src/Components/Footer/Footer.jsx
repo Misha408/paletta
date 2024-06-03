@@ -7,7 +7,7 @@ export const Footer = () => {
   return (
     <div className="bg-footer">
       <div className="extraSmal:max-w-310 extraSmal:px-2 md:max-w-2xl lg:max-w-[82.5rem] h-40 m-auto flex justify-between items-center">
-        <img src="./icons/logo.svg" alt="logo" className="extraSmal:w-16"/>
+        <img src="./icons/Logo.svg" alt="logo.png" className="w-auto" />
 
         <nav className="header__nav mx-auto">
           <ul className="header__nav-list flex text-center extraSmal:flex-col extraSmal:gap-1 medium:flex-row medium:gap-4">
