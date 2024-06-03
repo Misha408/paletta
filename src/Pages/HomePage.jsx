@@ -27,7 +27,7 @@ export const HomePage = () => {
               {t('Palleta')}
             </h1>
             <p
-              className="text-xs small:w-32 extraSmal: w-28 medium:w-96 lg:text-xl"
+              className="text-xs small:w-32 extraSmal: w-28 medium:w-96 lg:text-xl lg:w-96 xl:w-96 2xextraLarge:w-96"
             >
               {t('With care for the environment')}
             </p>
