@@ -1,0 +1,239 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+}
+@layer components {
+  .after-element::after {
+    content: "";
+    display: block;
+    width: 75px;
+    height: 4px;
+    background-color: #59be68;
+    border-radius: 30px;
+    margin-top: 0.875rem;
+  }
+  .after-element-smal::after {
+    content: "";
+    display: block;
+    width: 42px;
+    height: 4px;
+    background-color: #59be68;
+    border-radius: 30px;
+    margin-top: 0.875rem;
+  }
+
+  .after-element-center::after {
+    content: "";
+    display: block;
+    width: 75px;
+    height: 4px;
+    background-color: #59be68;
+    border-radius: 30px;
+    margin: 0.875rem auto 0;
+  }
+}
+@layer base {
+  html{
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-basic;
+    @apply text-basicSize;
+  }
+  .mb-19 {
+    @apply mb-[19rem];
+  }
+
+  .hidden {
+    display: none;
+  }
+  .h-78 {
+    max-height: 78.8vh;
+  }
+  .max-w-1340 {
+    max-width: 1340px;
+    width: 100%;
+  }
+  .max-w-613 {
+    max-width: 613px;
+  }
+  .max-w-700 {
+    max-width: 700px;
+  }
+  .max-w-416 {
+    max-width: 416px;
+  }
+  .max-w-500 {
+    max-width: 500px;
+  }
+  .max-w-525 {
+    max-width: 525px;
+  }
+  .max-h-678 {
+    max-height: 678px;
+  }
+  .pt-325 {
+    padding-top: 325px;
+  }
+  .shadow-tl {
+    box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .line__grey {
+    width: 4px;
+    height: 23%;
+    background-color: rgba(111, 132, 147, 0.7);
+    border-radius: 30px;
+    top: 3%;
+    z-index: 0;
+    box-shadow: -5px 0px 5px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+    left: 48vw;
+  }
+  .line__accent {
+    width: 4px;
+    height: 23%;
+    background-color: rgba(89, 190, 104, 0.7);
+    border-radius: 30px;
+    top: 16%;
+    z-index: 0;
+    box-shadow: -5px 0px 5px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+    left: 46.5vw;
+  }
+
+  .line__accent-2 {
+    content: "";
+    width: 4px;
+    height: 28.7%;
+    background-color: rgba(89, 190, 104, 0.7);
+    border-radius: 30px;
+    top: 44%;
+    left: 2%;
+    box-shadow: -5px 0px 5px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+  }
+
+  .line__grey-2{
+    width: 4px;
+    height: 28.7%;
+    background-color: rgba(111, 132, 147, 0.7);
+    border-radius: 30px;
+    top: 5%;
+    right: -5%;
+    box-shadow: -5px 0px 5px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+  }
+  .line__accent-3{
+    content: "";
+    width: 40.7%;
+    height: 4px;
+    background-color: rgba(89, 190, 104, 0.7);
+    border-radius: 30px;
+    position: absolute;
+    top: 102%;
+    left: 51%;
+    box-shadow: -5px 0px 5px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+  }
+
+  .line__grey-3{
+    width: 4px;
+    height: 28.7%;
+    background-color: rgba(111, 132, 147, 0.7);
+    border-radius: 30px;
+    top: 5%;
+    left: 0%;
+    box-shadow: -5px 0px 5px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+  }
+
+  .line__accent-4 {
+    width: 4px;
+    height: 40.4%;
+    background-color: rgba(89, 190, 104, 0.7);
+    border-radius: 30px;
+    top: 41%;
+    left: -7%;
+    box-shadow: -5px 0px 5px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+  }
+
+  .line__grey-4{
+    width: 4px;
+    height: 40.4%;
+    background-color: rgba(111, 132, 147, 0.7);
+    border-radius: 30px;
+    top: -14%;
+    right: -7%;
+    box-shadow: -5px 0px 5px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+  }
+  .line__accent-5{
+    width: 28.7%;
+    height: 4px;
+    background-color: rgba(89, 190, 104, 0.7);
+    border-radius: 30px;
+    top: 105%;
+    left: 8%;
+    box-shadow: -5px 0px 5px rgba(0, 0, 0, 0.3);
+    display: block;
+    opacity: 1;
+  }
+  .line__grey-5{
+    width: 28.7%;
+    height: 4px;
+    background-color: rgba(111, 132, 147, 0.7);
+    border-radius: 30px;
+    top: 101%;
+    left: -9%;
+    box-shadow: -5px 0px 5px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+  }
+
+
+  .style__background {
+    background-image: url('../public/img/testtube.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 50vw;
+    height: 44vw;
+    top: 0;
+  }
+  .style__background-2 {
+    background-image: url('../public/img/about-company.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 44vw;
+    height: 43vw;
+  }
+  .style__background-3 {
+    background-image: url('../public/img/factory.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 46.93vw;
+    padding-top: 42px;
+  }
+
+  .sticky {
+    position: sticky;
+    max-width: 851px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    margin-top: 20px;
+  }
+
+  .product__img {
+    max-height: 57.5vh;
+  }
+
+  .contact-h {
+    height: calc(100vh - 10rem);
+  }
+  
+  .swiper-pagination-bullet-active {
+    background: #59BE68;
+  }
+}
