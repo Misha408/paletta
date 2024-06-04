@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import 'animate.css/animate.min.css';
 import { Contacts } from "../Components/Contacts/Contacts";
+import { Link } from "react-router-dom";
 export const HomePage = () => {
   const { t } = useTranslation();
 
@@ -57,12 +58,12 @@ export const HomePage = () => {
               <br />
               {t('Our solutions are aimed at reducing environmental impact and ensuring sustainable development.')}
             </p>
-            <button
-              type="submit"
+            <Link
+              to={'/about'}
               className="transition ease-in-out duration-300 lborder-solid border-4 rounded-md font-bold large:px-9 large:py-4 small:inline extraSmal:block extraSmal:px-6 extraSmal:py-2 extraSmal:mx-auto text-black hover:bg-accent hover:text-white border-accent"
             >
               {t('Read more')}
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -86,12 +87,12 @@ export const HomePage = () => {
             >
               {t('SM 0/40/70 description')}
             </p>
-            <button
-              type="submit"
+            <Link
+              to='/product'
               className="transition ease-in-out duration-300 lborder-solid border-4 rounded-md font-bold large:px-9 large:py-4 small:inline extraSmal:block extraSmal:px-6 extraSmal:py-2 extraSmal:mx-auto text-black hover:bg-accent hover:text-white border-accent"
             >
               {t('Read more')}
-            </button>
+            </Link>
           </div>
         </div>
       </section>

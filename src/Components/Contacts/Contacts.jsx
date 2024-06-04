@@ -14,6 +14,17 @@ export const Contacts = () => {
     wow.init();
   }, []);
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+    const name = formData.get('name');
+    const phone = formData.get('phone');
+    const email = formData.get('email');
+    const message = formData.get('message');
+    event.target.reset();
+  };
+
   return (
     <div className="extraSmal:h-full contact-h ">
       <section className="section bg-white">
@@ -67,7 +78,12 @@ export const Contacts = () => {
               >
                 {t('Contact us')}
               </h1>
-              <form action="#" method="post" className="flex flex-col items-center">
+              <form
+                action="#"
+                method="post"
+                className="flex flex-col items-center"
+                onSubmit={handleSubmit}
+                >
                 <input
                   type="text"
                   id="name"
@@ -100,7 +116,7 @@ export const Contacts = () => {
                   type="submit"
                   className="transition ease-in-out duration-300 border-solid border-4 font-bold px-10 py-4 rounded-md text-black hover:bg-accent hover:text-white border-accent mb-6"
                 >
-                  {t('Read more')}
+                  {t('Send')}
                 </button>
               </form>
             </div>
