@@ -46,7 +46,7 @@ export const AboutPage = () => {
 
       <section className="section flex justify-between bg-bgcolor">
         <div
-          className="container__big anim__line 2xextraLarge:w-[82.5rem] large:w-4/5 small:w-11/12 extraSmal: w-11/12 mx-auto px-2.5 flex small:flex-row extraSmal:flex-col-reverse items-center gap-8"
+          className="container__big anim__line 2xextraLarge:w-[82.5rem] large:w-4/5 small:w-11/12 extraSmal:w-11/12 mx-auto px-2.5 flex small:flex-row extraSmal:flex-col-reverse items-center gap-8"
         >
           <div
             className="max-w-613 w-full mr-auto wow animate__animated animate__fadeInLeft"
