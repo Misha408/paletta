@@ -1,11 +1,29 @@
 import { useTranslation } from "react-i18next";
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import WOW from 'wowjs';
 import { Link } from "react-router-dom";
 import 'animate.css/animate.min.css';
+import { ToastContainer, toast, Bounce } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+const BASE_URL = 'https://api.telegram.org/bot6316091407:AAFFySp4q24OH_3N06BPXtGwUCPf1wWDf_c/';
 
 export const Contacts = () => {
   const { t } = useTranslation();
+  const [errors, setErrors] = useState({});
+  const phoneRegex = /^(\+\d{1,3}[- ]?)?\d{10,13}$/;
+
+  const notify = () => toast.success(t('Thank you for contacting us, please wait for a call'), {
+    position: "bottom-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "colored",
+    transition: Bounce,
+  });
 
   useEffect(() => {
     const wow = new WOW.WOW({
@@ -14,15 +32,61 @@ export const Contacts = () => {
     wow.init();
   }, []);
 
+  const validateForm = (formData) => {
+    const errors = {};
+
+    if (!formData.get('name')) {
+      errors.name = t('Name is required');
+    }
+
+    if (!formData.get('phone')) {
+      errors.phone = t('Phone is required');
+    } else if (!phoneRegex.test(formData.get('phone'))) {
+      errors.phone = t('Invalid phone number format');
+    }
+
+    if (!formData.get('email')) {
+      errors.email = t('Email is required');
+    } else if (!/\S+@\S+\.\S+/.test(formData.get('email'))) {
+      errors.email = t('Invalid email address');
+    }
+
+    if (!formData.get('message')) {
+      errors.message = t('Message is required');
+    }
+
+    return errors;
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
     const formData = new FormData(event.target);
-    const name = formData.get('name');
-    const phone = formData.get('phone');
-    const email = formData.get('email');
-    const message = formData.get('message');
-    event.target.reset();
+    const errors = validateForm(formData);
+
+    if (Object.keys(errors).length === 0) {
+      const name = formData.get('name');
+      const phone = formData.get('phone');
+      const email = formData.get('email');
+      const message = formData.get('message');
+
+      const messageString = `Ім'я: ${name}\nТелефон: ${phone}\nЕлектронна пошта: ${email}\nПовідомлення: ${message}`;
+      sendMassege(messageString);
+
+      event.target.reset();
+      notify();
+      setErrors({});
+    } else {
+      setErrors(errors);
+    }
+  };
+
+  const sendMassege = async (message) => {
+    const encodedMessage = encodeURIComponent(message);
+    const url = `${BASE_URL}sendMessage?chat_id=-4279468432&text=${encodedMessage}`;
+
+    const response = await fetch(url);
+    console.log(response);
   };
 
   return (
@@ -83,41 +147,62 @@ export const Contacts = () => {
                 method="post"
                 className="flex flex-col items-center"
                 onSubmit={handleSubmit}
-                >
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder={t('Name')}
-                  className="mb-6 w-full border border-none text-gray rounded-md py-3 px-6 bg-bgcolor outline-0"
-                />
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  placeholder={t('Phone')}
-                  className="mb-6 w-full border border-none text-gray rounded-md py-3 px-6 bg-bgcolor outline-0"
-                />
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder='E-mail'
-                  className="mb-6 w-full border border-none text-gray rounded-md py-3 px-6 bg-bgcolor outline-0"
-                />
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="4"
-                  placeholder={t('Message')}
-                  className="mb-9 w-full border border-none text-gray rounded-md py-3 px-6 bg-bgcolor outline-0"
-                ></textarea>
-                <button
-                  type="submit"
-                  className="transition ease-in-out duration-300 border-solid border-4 font-bold px-10 py-4 rounded-md text-black hover:bg-accent hover:text-white border-accent mb-6"
-                >
-                  {t('Send')}
-                </button>
+              >
+                <div className="mb-6 w-full">
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder={t('Name')}
+                    className={`w-full border ${errors.name ? 'border-red-500' : 'border-none'
+                      } text-gray rounded-md py-3 px-6 bg-bgcolor outline-0`}
+                  />
+                  {errors.name && <p className="text-red-500 mb-2">{errors.name}</p>}
+                </div>
+
+                <div className="mb-6 w-full">
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder={t('Phone')}
+                    className={`w-full border ${errors.phone ? 'border-red-500' : 'border-none'
+                      } text-gray rounded-md py-3 px-6 bg-bgcolor outline-0`}
+                  />
+                  {errors.phone && <p className="text-red-500 mb-2">{errors.phone}</p>}
+                </div>
+
+                <div className="mb-6 w-full">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder='E-mail'
+                    className={`w-full border ${errors.email ? 'border-red-500' : 'border-none'
+                      } text-gray rounded-md py-3 px-6 bg-bgcolor outline-0`}
+                  />
+                  {errors.email && <p className="text-red-500 mb-2">{errors.email}</p>}
+                </div>
+                <div className="mb-6 w-full">
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    placeholder={t('Message')}
+                    className={`w-full border ${errors.message ? 'border-red-500' : 'border-none'
+                      } text-gray rounded-md py-3 px-6 bg-bgcolor outline-0`}
+                  />
+                  {errors.message && <p className="text-red-500 mb-2">{errors.message}</p>}
+                </div>
+                <div>
+                  <button
+                    type="submit"
+                    className="transition ease-in-out duration-300 border-solid border-4 font-bold px-10 py-4 rounded-md text-black hover:bg-accent hover:text-white border-accent mb-6"
+                  >
+                    {t('Send')}
+                  </button>
+                  <ToastContainer />
+                </div>
               </form>
             </div>
           </div>

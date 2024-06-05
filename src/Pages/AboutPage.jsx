@@ -39,7 +39,7 @@ export const AboutPage = () => {
             <span
               className="line__accent-4 absolute wow animate__animated animate__fadeInDown"
             ></span>
-            <img className="w-full h-auto small:min-w-72" src="img/about-1.png" alt="" />
+            <img className="w-full h-auto max-w-[28.4rem] small:min-w-72" src="img/about-1.png" alt="" />
           </div>
         </div>
       </section>
@@ -87,7 +87,7 @@ export const AboutPage = () => {
             <span
               className="line__accent-5 absolute wow animate__animated animate__fadeInLeft"
             ></span>
-            <img className="w-full h-auto small:min-w-72" src="img/about-2.png" alt="" />
+            <img className="w-full h-auto max-w-[30rem] small:min-w-72" src="img/about-2.png" alt="" />
           </div>
         </div>
       </section>

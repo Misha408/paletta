@@ -27,6 +27,14 @@ const resources = {
       "Message": "Message",
       "Send": "Send",
 
+      'Name is required': "Name is required",
+      'Phone is required': 'Phone is required',
+      'Email is required': 'Email is required',
+      'Invalid phone number format': "Invalid phone number format",
+      'Invalid email address': "Invalid email address",
+      'Message is required': "Message is required'",
+      "Thank you for contacting us, please wait for a call": "Thank you for contacting us, please wait for a call",
+
       "Mixture of SM 0/40/70": "Mixture of SM 0/40/70",
       "The SM 0/40/70 mixture description": "The SM 0/40/70 mixture is the result of complete processing of stabilized ash that has been kept in the ash pit under a layer of water for a long time by drying and further separation at a modern production complex using advanced technology. ",
       "The separation technology description": "The separation technology was developed with the participation of the Gas Institute of the National Academy of Sciences of Ukraine based on computer modeling of the process and calculation of the behavior of small particles in the air flow. This is a very efficient fractionation method that produces the highest quality raw material processing results.",
@@ -152,6 +160,14 @@ const resources = {
       "Nature conservation is the responsibility of each of us.": "Збереження природи — це відповідальність кожного з нас.",
       "Environmental awareness is the key to a healthy future.": "Екологічна свідомість — ключ до здорового майбутнього.",
       "Let's take care of nature today to preserve it for future generations.": "Дбаймо про природу сьогодні, щоб зберегти її для майбутніх поколінь.",
+    
+      'Name is required': "Ім'я обов'язкове",
+      'Phone is required': "Телефон обов'язковий",
+      'Email is required': "Обов'язкова наявність електронної пошти",
+      'Invalid phone number format': "Неправильний формат номера телефону",
+      'Invalid email address': "Неправильна адреса електронної пошти",
+      'Message is required': "Потрібне повідомлення",
+      "Thank you for contacting us, please wait for a call": "Дякуємо за звернення, очікуйте дзвінка",
     }
   },
   de: {
@@ -228,6 +244,14 @@ const resources = {
       "Nature conservation is the responsibility of each of us.": "Der Schutz der Natur liegt in der Verantwortung eines jeden von uns.",
       "Environmental awareness is the key to a healthy future.": "Umweltbewusstsein ist der Schlüssel zu einer gesunden Zukunft.",
       "Let's take care of nature today to preserve it for future generations.": "Kümmern wir uns heute um die Natur, um sie für künftige Generationen zu erhalten.",
+    
+      'Name is required': "Naam is vereist",
+      'Phone is required': "Telefoon is vereist",
+      'Email is required': "E-mail is vereist",
+      'Invalid phone number format': "Ongeldig formaat telefoonnummer",
+      'Invalid email address': "Ongeldig e-mailadres",
+      'Message is required': "Bericht is vereist",
+      "Thank you for contacting us, please wait for a call": "Bedankt dat u contact met ons opneemt, wacht op een telefoontje",
     }
   },
   pl: {
@@ -304,6 +328,14 @@ const resources = {
       "Nature conservation is the responsibility of each of us.": "Ochrona przyrody jest obowiązkiem każdego z nas.",
       "Environmental awareness is the key to a healthy future.": "Świadomość ekologiczna jest kluczem do zdrowej przyszłości.",
       "Let's take care of nature today to preserve it for future generations.": "Dbajmy o przyrodę już dziś, aby zachować ją dla przyszłych pokoleń.",
+    
+      'Name is required': "Nazwa jest wymagana",
+      'Phone is required': "Wymagany jest telefon",
+      'Email is required': "Wymagany jest adres e-mail",
+      'Invalid phone number format': "Ongeldig formaat telefoonnummer",
+      'Invalid email address': "Nieprawidłowy format numeru telefonu",
+      'Message is required': "Wiadomość jest wymagana",
+      "Thank you for contacting us, please wait for a call": "Dziękujemy za kontakt, czekamy na telefon",
     }
   },
 };
