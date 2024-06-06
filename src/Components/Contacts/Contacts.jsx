@@ -6,7 +6,7 @@ import 'animate.css/animate.min.css';
 import { ToastContainer, toast, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const BASE_URL = 'https://api.telegram.org/bot6316091407:AAFFySp4q24OH_3N06BPXtGwUCPf1wWDf_c/';
+const BASE_URL = '';
 
 export const Contacts = () => {
   const { t } = useTranslation();
